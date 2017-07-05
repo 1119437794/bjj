@@ -1,0 +1,28 @@
+.bjornot {
+
+  @at-root #{&}__root {
+    overflow: hidden;
+    padding: 13px 0 ;
+  }
+
+  //@at-root #{&}__root--pl13 {
+  //  padding-left: 13px;
+  //}
+
+  @at-root #{&}__item {
+    height: 16px;
+    line-height: 16px;
+    padding: 0 18px;
+    float: left;
+    font-size: 14px;
+    color: #4c4c4c;
+    cursor: pointer;
+    &:not(:last-of-type){
+      border-right: 1px solid #cacaca;
+    }
+  }
+
+  @at-root #{&}__item--active {
+    color: #2a7bea;
+  }
+}

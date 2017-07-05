@@ -1,0 +1,152 @@
+.favorite-comp {
+  padding-top: 30px;
+
+  .tabs {
+    overflow: hidden;
+
+    li {
+      width: 135px;
+      height: 46px;
+      line-height: 46px;
+
+      float: left;
+      margin-right: 60px;
+      padding-left: 60px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+
+      // 默认是第一个的背景
+      background: #c9d1db url("../../../../dest/imgs/favorite-lab1.png") no-repeat 20px 5px;
+
+      &:nth-of-type(2){
+        background-image: url("../../../../dest/imgs/favorite-lab2.png");
+      }
+
+      &:nth-of-type(3){
+        background-image: url("../../../../dest/imgs/favorite-lab3.png");
+      }
+
+      &.active {
+        background-color: #2a7bea;
+      }
+    }
+
+  }
+}
+
+.favorite-comp-main {
+  margin-top: 20px;
+  padding: 30px 22px;
+  background-color: #fff;
+
+  .table-head {  font-weight: normal !important;  }
+
+  tr:not(:first-of-type) td{
+    padding-left: 8px;
+  }
+
+  .level-A { color: #2a7bea}
+  .level-B { color: #5cb85c}
+  .level-C { color: #f98625}
+  .level-D { color: red}
+
+  a {  color: #000;  }
+
+  .hover-underline:hover {
+    color: #2A7BEA;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.favorite-comp-main-head {
+  overflow: hidden;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4c4c4c;
+  font-size: 14px;
+  font-weight: bold;
+
+  label {
+    display: block;
+    float: left;
+    width: 68px;
+    cursor: pointer;
+
+    input {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+
+  >div {
+    float: left;
+
+    &:nth-of-type(1) {
+      width: 100px;
+    }
+
+    &:nth-of-type(2) {
+      width: 66px;
+    }
+
+    &:nth-of-type(3) {
+      width: 190px;
+    }
+  }
+
+  .favorite-comp-main-head-count { color: red; }
+
+  .select-out-box { margin-left: 12px; }
+
+  .favorite-comp-main-head-del {
+    width: 62px;
+    height: 26px;
+    line-height: 26px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+    background: #b5b5b5;
+
+    &.active { background-color: #2a7bea; }
+  }
+
+  .favorite-comp-main-head-filter button {
+    @extend .favorite-comp-main-head-del;
+    background-color: #2a7bea;
+    margin-left: 6px;
+  }
+}
+
+
+.favorite-comp-main-foot {
+  margin-top: 20px;
+  overflow: hidden;
+
+  >div{  float: left;  }
+
+  .favorite-comp-main-foot-count {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+
+
+    span {
+      color: red;
+      font-weight: bold;
+    }
+  }
+
+  .page-component {  float: right;  }
+}
+
+.favorite-comp-main-notice {
+  text-align: center;
+  font-weight: bold;
+  color: #2A7BEA;
+}

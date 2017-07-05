@@ -1,0 +1,135 @@
+@import "../../../common/public";
+/*登录*/
+#login{
+	width:100%;
+	background:url('../../../../dest/imgs/bg.png') no-repeat;
+	background-size:cover;
+    position: relative;
+  .content{
+    position: absolute;
+    left:50%;
+    top:20%;
+    text-align: center;
+    width: 500px;
+    height: 430px;
+
+    font-size: 30px;
+    color: #fff;
+    .input-box{
+      height: 60px;
+    }
+    input{
+      outline: none;
+      border: 1px solid #87848d;
+      border-radius: 100px;
+      width: 90%;
+      height: 40px;
+      padding-left: 70px;
+      font-size: 14px;
+      color: #95b0cc;
+    }
+    .input-focus{
+      border: 1px solid #1d87ff;
+    }
+    .user{
+      background: url('../../../../dest/imgs/user.png') 7% 50% no-repeat;
+    }
+    .pwd{
+      background: url("../../../../dest/imgs/pwd.png") 7% 50% no-repeat;
+    }
+    .login-btn{
+      width: 90%;
+      margin-left: 26px;
+      // margin-top: 40px;
+      letter-spacing:14px;
+      font-size:18px;
+      padding:8px;
+      background: url("../../../../dest/imgs/login-box.png") no-repeat;
+      background-size: cover;
+      cursor: pointer;
+      color: #fff;
+      &:hover{
+        color: #a7e2ff;
+      }
+    }
+    .login-label{
+      color: #2b7cea;
+      font-size: 14px;
+      padding: 20px 25px;
+      cursor: pointer;
+    }
+    .error-msg{
+      font-size: 16px;
+      color: red;
+      height: 40px;
+      width: 100%;
+      text-align: left;
+      padding-left: 40px;
+    }
+  }
+}
+.login-anti-fraud{
+  position: absolute;
+  width: 240px;
+  height: 56px;
+  top: 38%;
+  left: 10%;
+  background: url("../../../../dest/imgs/anti-fraud.png") no-repeat;
+}
+
+
+  /*主页*/
+#main-page{
+  width:100%;
+  @extend .h100;
+  position: absolute;
+  background:url('../../../../dest/imgs/main-bg.png') no-repeat;
+  background-size:cover;
+  .content{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  .title{
+    font-size: 30px;
+    color: #fff;
+  }
+  .list{
+    width: 862px;
+    height: 300px;
+    padding-top: 6%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    div{
+      float: left;
+      height: 120px;
+      line-height:120px;
+      position: relative;
+      background: url("../../../../dest/imgs/circle.png") no-repeat;
+      cursor: pointer;
+      img{
+        position: absolute;
+        left: 40px;
+        top: 38px
+
+      }
+      span{
+        font-size: 24px;
+        color: #fff;
+        margin-left: 145px;
+      }
+      .text-hover{
+        color: #2a7bea;
+      }
+    }
+  }
+}
+.main-anti-fraud {
+  width: 240px;
+  height: 56px;
+  margin: 70px auto 0;
+  background-image: url("../../../../dest/imgs/anti-fraud.png");
+}

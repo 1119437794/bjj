@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        /*
+         * 关联图
+         * todo store可解决
+         * 自定义实现双向绑定
+         * 针对用户点击图谱某一个公司时，ajax返回的数据暂存全局变量中
+         * 通过对象属性监听的方式，再返回到图谱所在的组件中，实现渲染公司详情弹框
+         * */
+        var atlasImgCompanyDetail = {};
+        var atlasImgCompanyDetailTmpValue = {};
+        var atlasImgCompanyDetailDataGet = null;
+        Object.defineProperty(atlasImgCompanyDetail, "data", {
+            set: function (data) {
+                atlasImgCompanyDetailTmpValue = data;
+                atlasImgCompanyDetailDataGet();
+            },
+            get: function () {
+                return atlasImgCompanyDetailTmpValue;
+            }
+        });
+
+        /*
+         * 针对用户刷新时 重写下title
+         * */
+        document.title = (window.sessionStorage.areaName || "") + "保监局风险监测预警平台";
+    </script>
+    <script src="/libs/jquery.min.js"></script>
+    <script src="/libs/echarts.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/libs/relativeGraph/assets/css/map.css"/>
+    <link rel="shortcut icon" href="/libs/relativeGraph/images/favicon.ico" type="image/x-icon"/>
+    <script src="/libs/relativeGraph/assets/script/plugin/plus.js"></script>
+    <script src="/libs/relativeGraph/assets/script/plugin/mtui.js"></script>
+    <script src="/libs/relativeGraph/assets/script/seajs/sea.js"></script>
+    <script type="text/javascript">
+        var nodes = [];
+        var links = [];
+        var level = 1;
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/*
+  css3 兼容处理
+  @param $property css3属性，如transform, transition, animation
+*/
+@mixin css3Compatible ($property, $propertyVal) {
+
+         -o-#{$property}: $propertyVal ;
+        -ms-#{$property}: $propertyVal ;
+       -moz-#{$property}: $propertyVal ;
+    -webkit-#{$property}: $propertyVal ;
+            #{$property}: $propertyVal ;
+}

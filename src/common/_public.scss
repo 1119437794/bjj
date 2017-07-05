@@ -1,0 +1,139 @@
+@import "loader";
+@import "ellipsis";
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+
+.w100{
+  width: 100%;
+}
+.h100{
+  height: 100%;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.clearfix{ overflow: hidden; }
+
+/*
+  文字垂直居中
+  $height -- 父元素高度
+*/
+@mixin textMiddle($height){
+  height: $height;
+  line-height: $height;
+}
+
+/*
+  新消息提醒 红点
+  $top -- 红点相对父元素绝对定位的top
+  $right -- 红点相对父元素绝对定位的right
+*/
+@mixin newMsg($top, $right){
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: red;
+    right: $right;
+    top: $top;
+  }
+}
+
+/*
+  类似对话弹框的三角形
+  $h -- 三角形宽
+  $w -- 三角形宽 (7px)
+*/
+@mixin triangle($h, $w){
+  position: relative;
+  &:after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    left: 50%;
+    bottom: -#{$h};
+    margin-left: -#{$w/2};
+    border-top: #{$h} solid #2a7bea;
+    border-left: #{$w/2} solid transparent;
+    border-right: #{$w/2} solid transparent;
+  }
+}
+
+/*
+  按钮
+  $w -- 按钮宽度 -- 10px
+  $h -- 按钮高
+  $color -- 按钮背景颜色
+*/
+@mixin btn($w, $h, $color){
+  display: inline-block;
+  width: $w;
+  @include textMiddle($h);
+  text-align: center;
+  border-radius: 2px;
+  background-color: $color;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+/*
+  table
+*/
+.table{
+  @extend .w100;
+  font-size: 14px;
+  border-collapse: collapse;
+  tr{
+    height: 48px;
+    border-top: 1px solid #e2e9f3;
+    &:nth-of-type(odd){
+      background-color: #fafbfd;
+    }
+    &:nth-of-type(even){
+      background-color: #fff;
+    }
+    &:last-of-type{
+      border-bottom: 1px solid #e2e9f3;
+    }
+
+    // 表格头部 字体加粗
+    &.table-head{
+      color: #333;
+      font-weight: bold;
+    }
+  }
+}
+
+.show{ display: block }
+.hide{ display: none }
+
+/* 针对表格固定高度，溢出滚动条处理*/
+.table-overflow{
+  @extend .w100;
+  @extend .h100;
+  overflow-y: auto;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei";
+}
+
+ul{  list-style: none;  }
+
+a {  text-decoration: none;  }

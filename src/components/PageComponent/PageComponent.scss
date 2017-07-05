@@ -1,0 +1,80 @@
+/*
+  @notes 整个网站统一使用分页组件，若是不满足使用者的样式需求，
+         可自行修改sass代码
+*/
+
+@import "../../common/_css3Compatible";
+
+// 组件容器
+.page-component{
+  color: #99a3b7;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+// 分页页码
+.page-component-pages{
+  float: left;
+
+  >li {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    float: left;
+    margin: 0 5px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #e2e9f3;
+    @include css3Compatible(transition, background-color .3s);
+
+    // 上一页 和 下一页按钮
+    &.prev-next {
+      width: 54px;
+    }
+
+    &.active, &:hover{
+      color: #fff;
+      background-color: #5f93e7;
+    }
+  }
+}
+
+// 分页共多少页
+.page-component-total{
+  float: left;
+  margin: 0 10px;
+  line-height: 38px;
+}
+
+// 输入指定页码跳转
+.page-component-input-to{
+  float: left;
+
+  >div{  float: left; }
+
+  input, button {
+    width: 38px;
+    height: 38px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #e2e9f3;
+  }
+
+  input {
+    margin: 0 5px;
+    padding: 0 5px;
+  }
+
+  button {
+    color: #99a3b7;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    @include css3Compatible(transition, background-color .3s);
+
+    &:hover{
+      color: #fff;
+      background-color: #5f93e7;
+    }
+  }
+}

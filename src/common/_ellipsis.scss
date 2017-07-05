@@ -1,0 +1,10 @@
+/*
+  @style 单行溢出隐藏
+  @author yxc
+*/
+
+.ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
